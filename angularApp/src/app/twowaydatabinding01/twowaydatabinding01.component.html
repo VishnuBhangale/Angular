@@ -1,0 +1,5 @@
+<div class="container ">
+<p>Type Your Name :  <input type="text" #val (input)="onInputChange(val.value)" class="form-control mt-2" [(ngModel)]="name" placeholder="enter the name" style="width: 250px;"></p>
+ <p>My Name is : {{name}}</p>
+ <p><button class="btn btn-primary" [disabled]="isDisabled" (click)="onClick()"> Click </button></p>
+</div>

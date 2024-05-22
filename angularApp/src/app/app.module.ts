@@ -10,6 +10,10 @@ import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { AssignmentAlert01Component } from './assignment-alert01/assignment-alert01.component';
 import { AssignmentAlert02Component } from './assignment-alert02/assignment-alert02.component';
+import { SearchComponent } from './search/search.component';
+import { TwowaydatabindingComponent } from './twowaydatabinding/twowaydatabinding.component';
+import { FormsModule } from '@angular/forms';
+import { Twowaydatabinding01Component } from './twowaydatabinding01/twowaydatabinding01.component';
 
 
 @NgModule({
@@ -21,11 +25,15 @@ import { AssignmentAlert02Component } from './assignment-alert02/assignment-aler
     BodyComponent,
     FooterComponent,
     AssignmentAlert01Component,
-    AssignmentAlert02Component
+    AssignmentAlert02Component,
+    SearchComponent,
+    TwowaydatabindingComponent,
+    Twowaydatabinding01Component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

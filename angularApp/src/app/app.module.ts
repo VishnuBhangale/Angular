@@ -14,6 +14,8 @@ import { SearchComponent } from './search/search.component';
 import { TwowaydatabindingComponent } from './twowaydatabinding/twowaydatabinding.component';
 import { FormsModule } from '@angular/forms';
 import { Twowaydatabinding01Component } from './twowaydatabinding01/twowaydatabinding01.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { Twowaydatabinding01Component } from './twowaydatabinding01/twowaydatabi
     AssignmentAlert02Component,
     SearchComponent,
     TwowaydatabindingComponent,
-    Twowaydatabinding01Component
+    Twowaydatabinding01Component,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

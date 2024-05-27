@@ -1,4 +1,5 @@
-<div class="container mt-5">
+<div class="container mt-5 row">
+    <div class="col-md-6 ">
     <h1>Welcome to my Angular App</h1>
     <p>This is the body of the application</p>
     <p>My first name is {{firstName}}</p>
@@ -22,7 +23,18 @@
     <input type="text" class="form-control mt-2" #val (input)="onInputChange(val.value)" placeholder="enter the name" style="width: 250px;">
     <h2>{{name}}</h2>
     <br><br> 
-<app-twowaydatabinding></app-twowaydatabinding>
-<app-parent></app-parent>
+<app-twowaydatabinding></app-twowaydatabinding><br><br>
+<app-parent></app-parent><br><br>
+<h2>COlor Picker OutPut Directives</h2>
+<app-todo-item></app-todo-item>
+</div>
+<div class="col-md-6 ">
+    <app-add-to-cart></app-add-to-cart>
+    <h2>Switch</h2>
+    <app-switch></app-switch>
+    <br><br><br>
+
+    <app-assignment-structural-directives></app-assignment-structural-directives>
+</div>
 <br><br>
 </div>

@@ -16,6 +16,11 @@ import { FormsModule } from '@angular/forms';
 import { Twowaydatabinding01Component } from './twowaydatabinding01/twowaydatabinding01.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { ColorPickerComponent } from './color-picker/color-picker.component';
+import { TodoItemComponent } from './todo-item/todo-item.component';
+import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
+import { SwitchComponent } from './switch/switch.component';
+import { AssignmentStructuralDirectivesComponent } from './assignment-structural-directives/assignment-structural-directives.component';
 
 
 @NgModule({
@@ -32,7 +37,12 @@ import { ChildComponent } from './child/child.component';
     TwowaydatabindingComponent,
     Twowaydatabinding01Component,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    ColorPickerComponent,
+    TodoItemComponent,
+    AddToCartComponent,
+    SwitchComponent,
+    AssignmentStructuralDirectivesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,30 @@
+<h2>Check Box Example</h2>
+<input type="checkbox" class="form-check-input" name="" id="" [(ngModel)]="checkBoxValue" (change)="OnCheck()">
+<div >
+    <p *ngIf="checkBoxValue">CheckBox is Checked</p>
+    <p  *ngIf="!checkBoxValue">CheckBox is UnChecked</p>
+</div>
+
+<h2>Switch Case Example</h2>
+<div [ngSwitch]="grade">
+    <p *ngSwitchCase="'A'">Excellent! You get A grade</p>
+    <p *ngSwitchCase="'B'">Good! You get B grade</p>
+    <p *ngSwitchCase="'C'">Poor! You get A grade</p>
+    <p *ngSwitchDefault="">Invalid choice !!!</p>
+
+</div>
+<h2>ng For Example</h2>
+<table class="table" >
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Fees</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of courses">
+            <td>{{item.name}}</td>
+            <td>{{item.Fees}}</td>
+        </tr>
+    </tbody>
+</table>

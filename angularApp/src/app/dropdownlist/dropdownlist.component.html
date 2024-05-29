@@ -1,0 +1,18 @@
+<h2 style="color: blue;">Dropdown List</h2>
+<div style="padding: 30px;border: 1px solid; border-radius: 3px; box-shadow: 3px 3px;">
+    <div>
+        <label for="Country" class="label label-info">Country</label>
+        <select class="form-select"  id="country" name="countryList" (change)="getState($event)">
+            <option selected disabled value="0">--Select--</option>
+            <option *ngFor="let item of country" [value]="item.code">{{item.name}}</option>
+          </select>
+    </div>
+    <div>
+        <label for="State" class="label label-info">State</label>
+        <select class="form-select" id="state" name="stateList">
+            <option selected disabled value="0">--Select--</option>
+            <option *ngFor="let item of stateList" [value]="item.stateId">{{item.stateName}}</option>
+          </select>
+    </div>
+</div>
+

@@ -21,6 +21,10 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 import { SwitchComponent } from './switch/switch.component';
 import { AssignmentStructuralDirectivesComponent } from './assignment-structural-directives/assignment-structural-directives.component';
+import { NgstyleComponent } from './ngstyle/ngstyle.component';
+import { NgclassComponent } from './ngclass/ngclass.component';
+import { CustomDirective } from './directives/custom.directive';
+import { DropdownlistComponent } from './dropdownlist/dropdownlist.component';
 
 
 @NgModule({
@@ -42,7 +46,11 @@ import { AssignmentStructuralDirectivesComponent } from './assignment-structural
     TodoItemComponent,
     AddToCartComponent,
     SwitchComponent,
-    AssignmentStructuralDirectivesComponent
+    AssignmentStructuralDirectivesComponent,
+    NgstyleComponent,
+    NgclassComponent,
+    CustomDirective,
+    DropdownlistComponent
   ],
   imports: [
     BrowserModule,

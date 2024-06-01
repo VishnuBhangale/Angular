@@ -1,0 +1,29 @@
+<mat-card class="registration-page">
+    <mat-card-title>Registration (Template Driven)</mat-card-title>  
+    <mat-card-content>
+      <form class="registration-form" #registrationForm="ngForm" (ngSubmit)="onSubmit(registrationForm)">        
+        <mat-form-field>
+              <input 
+                type="email"
+                matInput
+                ngModel
+                name="email"
+                placeholder="Email"
+                email
+                [required]="true"
+                >
+          </mat-form-field>
+          <mat-form-field>
+              <input 
+                type="password"
+                matInput
+                ngModel
+                name="password"
+                placeholder="Password"
+                [required]="true"
+                >
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit" [disabled]="!registrationForm.valid">Submit</button>
+      </form>
+    </mat-card-content> 
+</mat-card>

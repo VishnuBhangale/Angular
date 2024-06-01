@@ -1,0 +1,30 @@
+.biodata-page {
+    max-width: 100%;
+    margin: 50px auto 0 auto;
+}
+
+.biodata-form {
+    display: flex;
+    flex-direction: column;
+}
+.form-val{
+    margin-top: 10px;
+}
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  .imgCard{
+    margin: 23px;
+    width: 140px;
+  }
+  .img{
+    width: 111px;
+    height: 120px;
+  }
+  .button
+  {
+    width: 100px;
+    margin: 50px auto;
+  }

@@ -1,0 +1,157 @@
+<div class="container-fluid">
+  <div class="col-lg-6 vh-100">
+    <mat-card class="biodata-page">
+      <mat-card-title>Bio Data</mat-card-title>
+      <mat-card-content>
+        <form
+          class="biodata-form"
+          #biodataForm="ngForm"
+          (ngSubmit)="onSubmit(biodataForm)"
+        >
+          <mat-form-field>
+            <mat-label>Full Name</mat-label>
+            <input
+              type="text"
+              matInput
+              ngModel
+              name="fullName"
+              [required]="true"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>date Of Birth</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              placeholder="Choose a date"
+              ngModel
+              name="dob"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Place Of Birth</mat-label>
+            <input type="text" matInput ngModel name="placeOfBirth" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Religion</mat-label>
+            <mat-select ngModel name="religion">
+              <mat-option *ngFor="let item of Religion" [value]="item.name">{{
+                item.name
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Cast</mat-label>
+            <mat-select ngModel name="cast">
+              <mat-option *ngFor="let item of Cast" [value]="item.name">{{
+                item.name
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Blood Group</mat-label>
+            <mat-select ngModel name="bloodGroup">
+              <mat-option *ngFor="let item of BloodGroup" [value]="item.name">{{
+                item.name
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Education</mat-label>
+            <input
+              type="text"
+              matInput
+              ngModel
+              name="Education"
+              [required]="true"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Occupation</mat-label>
+            <input
+              type="text"
+              matInput
+              ngModel
+              name="Occupation"
+              [required]="true"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Income</mat-label>
+            <input
+              type="number"
+              matInput
+              ngModel
+              name="Income"
+              [required]="true"
+            />
+          </mat-form-field>
+
+          <span style="text-align: center"> Family Details</span>
+          <mat-form-field>
+            <mat-label>Father Name</mat-label>
+            <input
+              type="text"
+              matInput
+              ngModel
+              name="fatherName"
+              [required]="true"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Mother Name</mat-label>
+            <input type="text" matInput ngModel name="motherName" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Contact Number</mat-label>
+            <input
+              type="number"
+              matInput
+              ngModel
+              name="contactNumber"
+              [required]="true"
+            />
+          </mat-form-field>
+
+          <span style="text-align: center">Contact Details</span>
+          <mat-form-field>
+            <mat-label>Address</mat-label>
+            <textarea
+              matInput
+              ngModel
+              name="Address"
+              [required]="true"
+              placeholder="Address"
+            ></textarea>
+          </mat-form-field>
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="!biodataForm.valid"
+          >
+            Submit
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <!-- <div class="col-lg-6 vh-100">
+    <mat-card class="imgCard">
+      <img
+        mat-card-imag
+        src=".\assets\Developer.png"
+        alt="Image"
+        srcset=""
+        class="img"
+        [(ngModel)]="src"
+        name="profile"
+      />
+    </mat-card>
+  </div> -->
+</div>

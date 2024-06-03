@@ -35,6 +35,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { SimpleComponent } from './simple/simple.component';
 import { RegisterComponent } from './register/register.component';
@@ -83,6 +84,7 @@ import { BiodataComponent } from './biodata/biodata.component';
     MatRippleModule,
     MatSelectModule,
     MatDividerModule,
+    MatRadioModule,
     FormsModule,
    
     

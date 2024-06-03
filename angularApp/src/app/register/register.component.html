@@ -11,7 +11,14 @@
                 placeholder="Email"
                 email
                 [required]="true"
+                [minlength]="3"
+                [maxlength]="20"
+                #email="ngModel"
                 >
+             <mat-error *ngIf="email.errors?.['required']">The email is mandatory</mat-error>  
+            <mat-error *ngIf="email.errors?.['minlength']">Your email must have a minimum of {{email.errors?.['minlength']?.requiredLength}} 
+            chars, but it only has {{email.errors?.['minlength']?.actualLength}}</mat-error>  
+            <mat-error *ngIf="email.errors?.['email']">This is not valid email </mat-error>
           </mat-form-field>
           <mat-form-field>
               <input 
@@ -21,9 +28,38 @@
                 name="password"
                 placeholder="Password"
                 [required]="true"
+                [minlength]="5"
+                [maxlength]="8"
+                #password="ngModel"
                 >
+            <mat-error *ngIf="password.errors?.['required']">The password is mandatory</mat-error>  
+            <mat-error *ngIf="password.errors?.['minlength']">Your password must have a minimum of {{password.errors?.['minlength']?.requiredLength}} 
+            chars, but it only has {{password.errors?.['minlength']?.actualLength}}</mat-error>  
+            <mat-error *ngIf="password.errors?.['email']">This is not valid password </mat-error>
           </mat-form-field>
+          <mat-form-field>
+            <mat-label> Select County</mat-label>
+            <mat-select name="country" id="country" [(ngModel)]="selectedCountryId" (selectionChange)="onCountryChange()">
+              <mat-option *ngFor="let country of countries" [value]="country.countryId">
+                {{country.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Select Sate</mat-label>
+            <mat-select name="state" id="state" ngModel>
+              <mat-option *ngFor="let state of filteredStates" [value]="state.id">
+                {{state.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+         
+          <mat-radio-group aria-label="Select Gender" >
+            <mat-radio-button [value]="gender.id" *ngFor="let gender of gender">{{gender.name}}</mat-radio-button>            
+          </mat-radio-group>
+        
           <button mat-raised-button color="primary" type="submit" [disabled]="!registrationForm.valid">Submit</button>
+
       </form>
     </mat-card-content> 
 </mat-card>

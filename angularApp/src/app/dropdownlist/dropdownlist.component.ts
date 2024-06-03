@@ -52,7 +52,7 @@ state :any=[
   ngOnInit(): void {
   }
  
-  getState(countryCode: any) {
+getState  (countryCode: any) {
     console.log(countryCode?.target?.value);
    this.countryCode=countryCode?.target?.value;
     const newArray = this.state.filter((state:any)=>{

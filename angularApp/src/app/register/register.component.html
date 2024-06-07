@@ -37,6 +37,7 @@
             chars, but it only has {{password.errors?.['minlength']?.actualLength}}</mat-error>  
             <mat-error *ngIf="password.errors?.['email']">This is not valid password </mat-error>
           </mat-form-field>
+          <div ngModelGroup="address">
           <mat-form-field>
             <mat-label> Select County</mat-label>
             <mat-select name="country" id="country" [(ngModel)]="selectedCountryId" (selectionChange)="onCountryChange()">
@@ -53,8 +54,8 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
-         
-          <mat-radio-group aria-label="Select Gender" >
+        </div>
+          <mat-radio-group aria-label="Select Gender" ngModel >
             <mat-radio-button [value]="gender.id" *ngFor="let gender of gender">{{gender.name}}</mat-radio-button>            
           </mat-radio-group>
         

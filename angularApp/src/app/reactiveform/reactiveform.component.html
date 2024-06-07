@@ -1,0 +1,99 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-left rounded py-5">
+      <form [formGroup]="myReactiveForm" (ngSubmit)="OnSubmit()">
+        <div class="row">
+          <h2 style="text-align: center">Rective Form</h2>
+        </div>
+        <div class="row">
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="firstName"
+              placeholder="Enter your first name"
+            />
+          </div>
+          <div>
+            <small
+              class="text-danger"
+              *ngIf="
+                myReactiveForm.get('firstName')?.touched &&
+                !myReactiveForm.get('firstName')?.valid
+              "
+            >
+              <small
+                class="text-danger"
+                *ngIf="myReactiveForm.get('firstName')?.errors?.['required']"
+              >
+                First name is required</small
+              >
+              <small
+                class="text-danger"
+                *ngIf="myReactiveForm.get('firstName')?.errors?.['minlength']"
+              >
+                This field must have at least 2 characters</small
+              >
+              <small
+                class="text-danger"
+                *ngIf="myReactiveForm.get('firstName')?.errors?.['maxlength']">
+              
+                This field must have at most 50 characters
+                </small>
+              
+              <small class="text-danger" *ngIf="myReactiveForm.get('firstName')?.errors?.['firstNameNotAllowed']">
+                Try another name for your child
+              </small>
+            </small>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="lastName"
+              placeholder="Enter your last name"
+            />
+          </div>
+          <div>
+            <small
+              class="text-danger"
+              *ngIf="
+                myReactiveForm.get('lastName')?.touched &&
+                !myReactiveForm.get('lastName')?.valid
+              "
+            >
+              <small
+                class="text-danger"
+                *ngIf="myReactiveForm.get('lastName')?.errors?.['required']"
+              >
+                Last name is required</small
+              >
+              <small
+                class="text-danger"
+                *ngIf="myReactiveForm.get('lastName')?.errors?.['minlength']"
+              >
+                This field must have at least 2 characters</small
+              >
+              <small
+                class="text-danger"
+                *ngIf="myReactiveForm.get('lastName')?.errors?.['maxlength']"
+              >
+                This field must have at most 50 characters</small
+              >
+            </small>
+        </div>
+        </div>
+        <div class="row mt-2">
+          <div class="com-md-6">
+              <button type="submit"  class="mt-2 btn btn-primary">Submit</button>
+              <button class="btn btn-warning ms-2" type="button" (click)="resetForm()" >Reset Form</button>
+          </div>
+         
+      </div>
+        <!-- [disabled]="!myReactiveForm.valid" -->
+      </form>
+    </div>
+  </div>
+</div>

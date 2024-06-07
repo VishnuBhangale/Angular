@@ -12,7 +12,7 @@ import { AssignmentAlert01Component } from './assignment-alert01/assignment-aler
 import { AssignmentAlert02Component } from './assignment-alert02/assignment-alert02.component';
 import { SearchComponent } from './search/search.component';
 import { TwowaydatabindingComponent } from './twowaydatabinding/twowaydatabinding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Twowaydatabinding01Component } from './twowaydatabinding01/twowaydatabinding01.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
@@ -40,6 +40,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { SimpleComponent } from './simple/simple.component';
 import { RegisterComponent } from './register/register.component';
 import { BiodataComponent } from './biodata/biodata.component';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { BiodataComponent } from './biodata/biodata.component';
     DropdownlistComponent,
     SimpleComponent,
     RegisterComponent,
-    BiodataComponent
+    BiodataComponent,
+    ReactiveformComponent
   ],
   imports: [
     BrowserModule,
@@ -86,6 +88,7 @@ import { BiodataComponent } from './biodata/biodata.component';
     MatDividerModule,
     MatRadioModule,
     FormsModule,
+    ReactiveFormsModule
    
     
   ],

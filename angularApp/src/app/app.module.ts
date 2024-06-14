@@ -41,6 +41,8 @@ import { SimpleComponent } from './simple/simple.component';
 import { RegisterComponent } from './register/register.component';
 import { BiodataComponent } from './biodata/biodata.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RapidapiComponent } from './rapidapi/rapidapi.component';
 
 
 @NgModule({
@@ -70,7 +72,8 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
     SimpleComponent,
     RegisterComponent,
     BiodataComponent,
-    ReactiveformComponent
+    ReactiveformComponent,
+    RapidapiComponent
   ],
   imports: [
     BrowserModule,
@@ -88,11 +91,13 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
     MatDividerModule,
     MatRadioModule,
     FormsModule,
-    ReactiveFormsModule
-   
+    ReactiveFormsModule,
+    HttpClientModule,
     
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

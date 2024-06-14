@@ -13,10 +13,12 @@ export class DropdownlistComponent implements OnInit {
   {
     "name":"India",
     "code":1,
+    "dialNo":"+91"
    },
    {
     "name":"US",
     "code":2,
+    "dialNo":"+02"
    }
 ];
 state :any=[

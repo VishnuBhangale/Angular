@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {
+  FormArray,
+  FormBuilder,
   FormControl,
   FormGroup,
-  ReactiveFormsModule,
   ValidationErrors,
   Validators,
 } from '@angular/forms';
+import { Country } from '../models/country';
 
 @Component({
   selector: 'app-reactiveform',
@@ -13,46 +15,68 @@ import {
   styleUrls: ['./reactiveform.component.css'],
 })
 export class ReactiveformComponent implements OnInit {
+  countries: Country[] = [
+    { name: 'India', code: '+91' },
+    { name: 'United States', code: '+1' },
+    { name: 'Canda', code: '+2' },
+    // Add more countries as needed
+  ];
+
+  selectedCountryCode: string = '';
   myReactiveForm!: FormGroup;
-  constructor() {}
+
+  get phoneNumber(): any {
+    return this.myReactiveForm.get('address.phoneNumber');
+  }
+  // Inject the formbuilder
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.createForm();
   }
 
   createForm() {
-    this.myReactiveForm = new FormGroup({
-      firstName: new FormControl('', [
-        Validators.required,
-        Validators.minLength(2),
-        Validators.maxLength(50),
-        this.FirstNameNotAllowed,
-      ]),
-      lastName: new FormControl('', [
-        Validators.required,
-        Validators.minLength(2),
-        Validators.maxLength(50),
-      ]),
+    this.myReactiveForm = this.fb.group({
+      firstName: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.maxLength(50),
+          this.FirstNameNotAllowed,
+        ],
+      ],
+      lastName: [],
+      address: this.fb.group({
+        country: [],
+        phoneNumber: [],
+      }),
+      skills: this.fb.array([]),
     });
+  }
+  get skills() {
+    return this.myReactiveForm.get('skills') as FormArray;
+  }
+  OnAddSkill() {
+    this.skills.push(new FormControl('', Validators.required));
   }
 
   OnSubmit() {
     console.log('fom submitted ....!', this.myReactiveForm);
   }
-  // custom validator function
+
+  // custom validatgor function
   FirstNameNotAllowed(control: FormControl): ValidationErrors | null {
-    //   //console.log('FirstNameNotAllowed', control.value );
+    //console.log('FirstNameNotAllowed', control.value );
 
-    //   const nameNotAllowed = ['Amrishpuri', 'Gulshan Gover', 'Tatya vinchu'];
-    //  //Getting value of the form control
-    //   const firstName = control.value as string; // Raj
-    //   //check if the value is in the array or not
-    //   if (nameNotAllowed.indexOf(firstName)  !== -1) {
-    //     return {'firstNameNotAllowed': true}
-    //   }
-    //   return null;
+    // const nameNotAllowed = ['Amrishpuri', 'Gulshan Gover', 'Tatya vinchu'];
 
-    //==================Using set =============================
+    // const firstName = control.value as string; // Raj
+    // if (nameNotAllowed.indexOf(firstName)  !== -1) {
+    //   return {'firstNameNotAllowed': true}
+    // }
+    // return null;
+
     // Set of the names that are not allowed
 
     const nameNotAllowed = new Set(['test', 'demo']);
@@ -69,8 +93,26 @@ export class ReactiveformComponent implements OnInit {
     // If the value is allowed return null
     return null;
   }
-  resetForm() {
 
+  resetForm() {
     this.myReactiveForm.reset();
-   }
+  }
+  onChangeCountry(event: any) {
+    console.log(event);
+
+    const selectedCountry = this.countries.find(
+      (country) => country.name == event.target.value
+    );
+
+    console.log(selectedCountry);
+
+    if (selectedCountry) {
+      this.selectedCountryCode = selectedCountry.code;
+      this.phoneNumber?.setValue(this.selectedCountryCode); // prepend code automatically.
+    } else {
+      this.selectedCountryCode = '';
+      this.phoneNumber.get('address.phoneNumber')?.setValue(''); // clear on invalid selection
+    }
+  }
+  
 }

@@ -43,6 +43,10 @@ import { BiodataComponent } from './biodata/biodata.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RapidapiComponent } from './rapidapi/rapidapi.component';
+import { TodoComponent } from './todo/todo.component';
+import { PipeconvertComponent } from './pipeconvert/pipeconvert.component';
+import { FilterPipe } from './pipe/filter.pipe';
+import { ApiassignmentComponent } from './apiassignment/apiassignment.component';
 
 
 @NgModule({
@@ -73,7 +77,11 @@ import { RapidapiComponent } from './rapidapi/rapidapi.component';
     RegisterComponent,
     BiodataComponent,
     ReactiveformComponent,
-    RapidapiComponent
+    RapidapiComponent,
+    TodoComponent,
+    PipeconvertComponent,
+    FilterPipe,
+    ApiassignmentComponent
   ],
   imports: [
     BrowserModule,

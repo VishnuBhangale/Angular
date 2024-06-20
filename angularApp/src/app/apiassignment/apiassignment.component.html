@@ -1,0 +1,26 @@
+<h2>Assignment API Call </h2>
+<div class="table-wrapper">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Email</th>
+          <th>DOB</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listData">
+          <td>{{ item.name.title + ' ' + item.name.first + ' ' + item.name.last }}</td>
+          <td>{{ item.gender }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.dob.date | date }}</td>
+          <td>{{ item.dob.age }}</td>
+        </tr>
+        <tr *ngIf="listData.length === 0">
+          <td colspan="2" class="text-center">No results found</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

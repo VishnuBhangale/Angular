@@ -1,0 +1,30 @@
+
+<div>
+    <h2>Pipe Example</h2>
+    <p><strong>Original Date:</strong> {{currentDate}}</p>
+    <p><strong>Formatted Date:</strong> {{currentDate | date:'mediumDate'}}</p>
+    <p><strong>Uppercase name :</strong>{{name | uppercase}}</p>
+    <p><strong>Lowercase name :</strong>{{name | lowercase}}</p>
+    <p><strong>Currency  :</strong>{{amount | currency:'INR'}}</p>
+    <p><strong>Percentage  :</strong>{{percentage | percent}}</p>
+</div>
+<div>
+    <h2>Async Pipe</h2>
+
+    <!-- <ul>
+        <li *ngFor="let course of data$ | async">
+            {{course}}
+        </li>
+    </ul> -->
+    <ng-container *ngIf="data$ | async as data; else loading">
+
+        <ul>
+            <li *ngFor="let course of data">
+                {{course}}
+            </li>
+        </ul>
+    </ng-container>
+    <ng-template #loading>
+        <p>Loading ......</p>
+    </ng-template>
+</div>

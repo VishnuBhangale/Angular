@@ -1,1 +1,32 @@
-<p>search works!</p>
+<div class="container">
+    <div class="row">
+      <input style="width:350px; margin-bottom: 5px;" 
+             type="text"
+             class="form-control"
+             placeholder="search"
+             (blur)="onBlur($event)"
+      />
+    </div>
+  
+    <div class="row">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Word Count</th>
+            <th>Snippet</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of wikiList">
+            <td>{{ item.title }}</td>
+            <td>{{ item.wordcount }}</td>
+            <td>{{ item.snippet }}</td>
+          </tr>
+          <tr *ngIf="wikiList.length === 0">
+            <td colspan="3" class="text-center">No results found</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

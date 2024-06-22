@@ -1,0 +1,22 @@
+<!-- header section -->
+<header id="header">
+    <h2>Product Details</h2>   
+</header>
+<section id="main-section">
+ 
+        <section id="product-item" *ngFor="let product of productData">
+            <img src="{{product.image}}" alt="product Image">
+            <h4>{{product.title}}</h4>
+            <p>{{product.description}}</p>
+          <section id="product-button">
+            <button>View</button>
+            <button>Buy</button>
+                <p>{{product.price | currency:'USD'}} </p>
+        </section>
+        <p>Rating: {{product.rating.rate}} ({{product.rating.count}} reviews)</p>
+        <section *ngIf="productData.length===0">
+            <header id="header">
+                <h3>Product Details not available</h3>   
+            </header>
+        </section>
+</section>

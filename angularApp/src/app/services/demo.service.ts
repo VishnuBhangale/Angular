@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, delay, of } from 'rxjs';
+import { Product } from '../models/product';
 
 @Injectable({
   providedIn: 'root',
@@ -37,5 +38,9 @@ export class DemoService {
     return this.httpClient.get('https://randomuser.me/api', {
       params,
     });
+  }
+  getProduct(): Observable<Product[]> {
+   
+    return this.httpClient.get<Product[]>('https://fakestoreapi.com/products');
   }
 }

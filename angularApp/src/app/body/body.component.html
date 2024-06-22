@@ -1,4 +1,4 @@
-<div class="container mt-5 row">
+<!-- <div class="container mt-5 row">
     <div class="col-md-6 ">
     <h1>Welcome to my Angular App</h1>
     <p>This is the body of the application</p>
@@ -9,18 +9,18 @@
     <img [src]="imageUrl" alt="" width="200" height="200"><br><br>
     <button [disabled]="isDisabled">Click Me</button><br><br>
     <input type="text" [value] ="inputValue"><br><br>
-    <button class="btn btn-primary " (click)="buttonClick()">Save</button><br><br>
+    <button class="btn btn-primary " (click)="buttonClick()">Save</button><br><br> -->
      <!--  Input event -->
     <!-- <input type="text" class="form-control mt-2" (input)="onInputChange($event)" placeholder="enter the name"  style="width:250px"> 
    <h2>{{name}}</h2>  -->
    <!--  blur event -->
-   <br><br>
+   <!-- <br><br> -->
    <!-- <input type="text" class="form-control mt-2" (blur)="onInputChange($event)" placeholder="enter the name"  style="width:250px"> 
    <h2>{{name}}</h2> 
     <br><br> -->
 
     <!-- Template Reference Variable -->
-    <input type="text" class="form-control mt-2" #val (input)="onInputChange(val.value)" placeholder="enter the name" style="width: 250px;">
+    <!-- <input type="text" class="form-control mt-2" #val (input)="onInputChange(val.value)" placeholder="enter the name" style="width: 250px;">
     <h2>{{name}}</h2>
     <br><br> 
 <app-twowaydatabinding></app-twowaydatabinding><br><br>
@@ -28,7 +28,7 @@
 <h2>COlor Picker OutPut Directives</h2>
 <app-todo-item></app-todo-item>
 </div>
-<div class="col-md-6 ">
+<div class="col-md-6 "> -->
     <!-- <app-add-to-cart></app-add-to-cart>
     <h2>Switch</h2>
     <app-switch></app-switch>
@@ -51,11 +51,12 @@
 
     <!-- <app-reactiveform></app-reactiveform> -->
 <!-- <app-rapidapi></app-rapidapi> -->
- <app-todo></app-todo>
+ <!-- <app-todo></app-todo>
  <app-pipeconvert></app-pipeconvert>
-   <app-search></app-search> 
-   
-   <app-apiassignment></app-apiassignment>
-</div>
+   <app-search></app-search>  -->
+<!-- 
+   <app-apiassignment></app-apiassignment> -->
+<!-- </div>
 <br><br>
-</div>
+</div> -->
+<router-outlet></router-outlet>

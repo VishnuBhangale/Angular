@@ -47,6 +47,12 @@ import { TodoComponent } from './todo/todo.component';
 import { PipeconvertComponent } from './pipeconvert/pipeconvert.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { ApiassignmentComponent } from './apiassignment/apiassignment.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { HomeComponent } from './home/home.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { LoginComponent } from './login/login.component';
+import { ApiintegrationComponent } from './apiintegration/apiintegration.component';
 
 
 @NgModule({
@@ -81,7 +87,13 @@ import { ApiassignmentComponent } from './apiassignment/apiassignment.component'
     TodoComponent,
     PipeconvertComponent,
     FilterPipe,
-    ApiassignmentComponent
+    ApiassignmentComponent,
+    AboutusComponent,
+    ContactusComponent,
+    HomeComponent,
+    PagenotfoundComponent,
+    LoginComponent,
+    ApiintegrationComponent
   ],
   imports: [
     BrowserModule,

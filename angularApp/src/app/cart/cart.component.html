@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <input class="form-control mt-5" [(ngModel)]="searchText" type="text" placeholder="Search gifs"
+            (blur)="onBlur()">
+        </div>
+    </div>
+<div class="gif-container mt-5">
+    <div class="gif" *ngFor="let gif of carts">
+      <img [src]="gif.images.fixed_height.url" [alt]="gif.title">
+    </div>
+</div>
+</div>

@@ -53,6 +53,12 @@ import { HomeComponent } from './home/home.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { LoginComponent } from './login/login.component';
 import { ApiintegrationComponent } from './apiintegration/apiintegration.component';
+import { TodoviewComponent } from './todoview/todoview.component';
+import { OrderModule } from './order/order.module';
+import { SharedModule } from './shared/shared.module';
+import { ChatComponent } from './chat/chat.component';
+import { Chat1Component } from './chat/chat1/chat1.component';
+import { Chat2Component } from './chat/chat2/chat2.component';
 
 
 @NgModule({
@@ -76,8 +82,7 @@ import { ApiintegrationComponent } from './apiintegration/apiintegration.compone
     SwitchComponent,
     AssignmentStructuralDirectivesComponent,
     NgstyleComponent,
-    NgclassComponent,
-    CustomDirective,
+    NgclassComponent,   
     DropdownlistComponent,
     SimpleComponent,
     RegisterComponent,
@@ -93,7 +98,11 @@ import { ApiintegrationComponent } from './apiintegration/apiintegration.compone
     HomeComponent,
     PagenotfoundComponent,
     LoginComponent,
-    ApiintegrationComponent
+    ApiintegrationComponent,
+    TodoviewComponent,
+    ChatComponent,
+    Chat1Component,
+    Chat2Component
   ],
   imports: [
     BrowserModule,
@@ -113,6 +122,8 @@ import { ApiintegrationComponent } from './apiintegration/apiintegration.compone
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    OrderModule,
+    SharedModule
     
   ],
   providers: [

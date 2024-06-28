@@ -40,5 +40,10 @@ deleteTodo(id: any) : Observable<Todo[]>{
   let API_URL = `${this.apiUrl}/todos/${id}`;
   return this._httpClient.delete<Todo[]>(API_URL);
  }
+ getTodoById(id:number):Observable<Todo>
+ {
+  let API_URL = `${this.apiUrl}/todos/${id}`;
+  return this._httpClient.get<Todo>(API_URL);
+ }
  
 }

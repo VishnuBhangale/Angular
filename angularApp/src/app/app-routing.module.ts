@@ -11,6 +11,7 @@ import { ApiintegrationComponent } from './apiintegration/apiintegration.compone
 import { TodoviewComponent } from './todoview/todoview.component';
 import { OrderComponent } from './order/order.component';
 import { ChatComponent } from './chat/chat.component';
+import { RapidapiComponent } from './rapidapi/rapidapi.component';
 
 // Configure the routes
 // configure the routes .
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: '' , redirectTo: 'homenew', pathMatch: 'full'},  
   {path: 'order', component: OrderComponent },
   {path: 'chat', component: ChatComponent },
+  {path: 'rapidapi', component : RapidapiComponent},
   { path: '**', redirectTo: 'homenew'}
  ]
 

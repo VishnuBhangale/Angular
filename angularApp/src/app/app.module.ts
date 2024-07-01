@@ -41,7 +41,7 @@ import { SimpleComponent } from './simple/simple.component';
 import { RegisterComponent } from './register/register.component';
 import { BiodataComponent } from './biodata/biodata.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { RapidapiComponent } from './rapidapi/rapidapi.component';
 import { TodoComponent } from './todo/todo.component';
 import { PipeconvertComponent } from './pipeconvert/pipeconvert.component';
@@ -59,6 +59,7 @@ import { SharedModule } from './shared/shared.module';
 import { ChatComponent } from './chat/chat.component';
 import { Chat1Component } from './chat/chat1/chat1.component';
 import { Chat2Component } from './chat/chat2/chat2.component';
+import { HeaderInterceptorService } from './interceptors/header-interceptor.service';
 
 
 @NgModule({
@@ -127,7 +128,12 @@ import { Chat2Component } from './chat/chat2/chat2.component';
     
   ],
   providers: [
-    
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass : HeaderInterceptorService,
+      multi: true
+
+    }
   ],
   bootstrap: [AppComponent]
 })

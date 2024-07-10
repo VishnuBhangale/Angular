@@ -1,20 +1,24 @@
 <!-- header section -->
 <header id="header">
-    <h2>Product Details</h2>   
+    <h2>Add Product</h2>
+    <a  routerLink="/productCart" routerLinkActive="active-link" class="bi bi-cart4" id="cart" style="font-size:24px">
+        <span class='badge badge-warning' id='lblCartCount'>{{productList.length>0?productList.length:0}}</span>
+    </a>
 </header>
 <section id="main-section">
  
-        <section id="product-item" *ngFor="let product of productData">
+        <section id="product-item" *ngFor="let product of productDataList">
             <img [src]="product.image" alt="product Image">
             <h4>{{product.title}}</h4>
             <p>{{product.description}}</p>
           <section id="product-button">
-            <button>View</button>
+            <!-- <button>View</button> -->
+            <button type="submit" (click)="addProduct(product)">Add</button>
             <button>Buy</button>
                 <p>{{product.price | currency:'USD'}} </p>
         </section>
         <p>Rating: {{product.rating?.rate ?? 'N/A'}} ({{product.rating?.count ?? '0'}} reviews)</p>
-        <section *ngIf="productData.length===0">
+        <section *ngIf="productDataList.length===0">
             <header id="header">
                 <h3>Product Details not available</h3>   
             </header>

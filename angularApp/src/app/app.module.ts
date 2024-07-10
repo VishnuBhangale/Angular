@@ -60,7 +60,11 @@ import { ChatComponent } from './chat/chat.component';
 import { Chat1Component } from './chat/chat1/chat1.component';
 import { Chat2Component } from './chat/chat2/chat2.component';
 import { HeaderInterceptorService } from './interceptors/header-interceptor.service';
-
+import { AddProductCatalogComponent } from './ecommerse/add-product-catalog/add-product-catalog.component';
+import { ProductCartComponent } from './ecommerse/product-cart/product-cart.component';
+import { AdduserComponent } from './adduser/adduser.component';
+import { LifecyclehookComponent } from './lifecyclehook/lifecyclehook.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -103,7 +107,12 @@ import { HeaderInterceptorService } from './interceptors/header-interceptor.serv
     TodoviewComponent,
     ChatComponent,
     Chat1Component,
-    Chat2Component
+    Chat2Component,
+    AddProductCatalogComponent,
+    ProductCartComponent,
+    AdduserComponent,
+    LifecyclehookComponent,  
+    RxjsComponent
   ],
   imports: [
     BrowserModule,
@@ -124,7 +133,7 @@ import { HeaderInterceptorService } from './interceptors/header-interceptor.serv
     ReactiveFormsModule,
     HttpClientModule,
     OrderModule,
-    SharedModule
+    SharedModule,
     
   ],
   providers: [

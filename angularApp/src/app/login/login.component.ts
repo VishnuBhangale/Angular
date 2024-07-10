@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     window.alert('Login successfully....!')
 
     // redirect to home route .
-    this._router.navigate(['home']);
+    this._router.navigate(['homenew']);
 
 
    } else {

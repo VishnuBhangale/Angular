@@ -1,0 +1,67 @@
+
+
+<div class="container p-4">
+    <div class="card p-5">
+       <!-- <div class="cartdiv">
+        
+            <a href="#" class="bi bi-cart4" id="cart" style="font-size:24px">
+             <span class='badge badge-warning' id='lblCartCount'>{{productList.length>0?productList.length:0}}</span>
+            </a>
+       </div> -->
+       <header id="header">
+        <h2>Add Product</h2>
+        <a  routerLink="/productCart" routerLinkActive="active-link" class="bi bi-cart4" id="cart" style="font-size:24px">
+            <span class='badge badge-warning' id='lblCartCount'>{{productList.length>0?productList.length:0}}</span>
+        </a>
+         
+    </header>
+
+  <form [formGroup]="myForm" (ngSubmit)="OnSubmit()">
+
+    <!-- <div class="row">
+         <div class="col-md-2">
+          <input style="width:250px;"
+            type="text" hidden="true"
+            class="form-control"
+            formControlName="id" 
+          />
+        </div>
+
+      </div> -->
+      <div class="row">
+        <div class="col-md-2">
+            Enter Title
+        </div>
+        <div class="col-md-4 p-3">
+          <input style="width:250px;"
+            type="text"
+            class="form-control"
+            formControlName="title"
+            placeholder="Enter title"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+            Enter Description
+        </div>
+        <div class="col-md-4 p-3">
+            <textarea style="width:250px;" cols="10" rows="5"
+            class="form-control"
+            formControlName="description"
+            placeholder="Enter Description"
+            ></textarea>          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 p-3"></div>
+        <div class="col-md-4">
+           <button type="submit" class="btn btn-success">Add Product</button>
+          
+        </div>
+      </div>
+      
+   </form>
+   </div>
+   </div>
+  

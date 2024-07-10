@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card mt-4 p-5">
+        <header id="header">
+            <h2>Product Cart</h2>
+            <div *ngIf="receivedProductList.length==0">
+            <button class="btn btn-primary btn-sm ml-2 m-3" (click)="backToAddProduct()">Add Product</button>
+            </div>
+            <i class="bi bi-cart4" id="cart" style="font-size:24px">
+                <span class='badge badge-warning' id='lblCartCount'>{{receivedProductList.length>0?receivedProductList.length:0}}</span>
+            </i>
+             
+        </header>
+  
+      <div class="card" style="width: 600px;" *ngIf="receivedProductList.length > 0; else emptyCart">
+        <ul>
+          <li *ngFor="let item of receivedProductList">
+            <img [src]="item.image" alt="product Image" style="width:100px;height: 100px;">
+            <h5>Title</h5>            
+            {{ item.title }}
+            
+            <h5>Description</h5>
+
+            {{ item.description }}
+            {{ item.price | currency:"USD" }}
+            <div>
+            <button class="btn btn-primary btn-sm ml-2 m-3" (click)="addItemToCart(item)">+</button>
+            <button class="btn btn-danger btn-sm ml-2" (click)="removeFromCart(item)">-</button>
+
+            </div>
+          </li>
+        </ul>
+      </div>
+  
+      <ng-template #emptyCart>
+        <p>Your cart is empty.</p>
+      </ng-template>
+    </div>
+  </div>

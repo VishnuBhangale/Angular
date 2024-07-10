@@ -1,0 +1,40 @@
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+  }
+  
+  .label-warning[href],
+  .badge-warning[href] {
+    background-color: #c67605;
+  }
+  #lblCartCount {
+      font-size: 12px;
+      background: #ff0000;
+      color: #fff;
+      padding: 0 5px;
+      vertical-align: top;
+      margin-left: -10px; 
+  }
+ 
+#header{
+    display: flex;
+    justify-content: space-between;
+    background-color:var(--bg-color-main);
+    color: #F4F4F1;
+    font-family: var(--font-family-main-heading);
+    padding: 10px 0px;
+}
+
+#header h2{
+    padding-left: 3dvw;
+    letter-spacing: 2px;
+}
+#header #cart{
+    padding-right: 3dvw;
+    font-size: xx-large;
+    color: #6080c5;
+    font-weight: bold;
+}

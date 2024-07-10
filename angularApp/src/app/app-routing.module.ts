@@ -12,6 +12,13 @@ import { TodoviewComponent } from './todoview/todoview.component';
 import { OrderComponent } from './order/order.component';
 import { ChatComponent } from './chat/chat.component';
 import { RapidapiComponent } from './rapidapi/rapidapi.component';
+import { AddProductCatalogComponent } from './ecommerse/add-product-catalog/add-product-catalog.component';
+import { ProductCartComponent } from './ecommerse/product-cart/product-cart.component';
+import { AuthGuard } from './guards/auth.guard';
+import { CanDeactivateGuard } from './guards/can-deactivate.guard';
+import { AdduserComponent } from './adduser/adduser.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
+
 
 // Configure the routes
 // configure the routes .
@@ -28,15 +35,22 @@ import { RapidapiComponent } from './rapidapi/rapidapi.component';
 //   { path: '**', component: PagenotfoundComponent}
 // ];
 const routes: Routes = [
-  { path: 'homenew', loadChildren: () => import('./homenew/homenew.module').then(m => m.HomenewModule) },
-  { path: 'product', loadChildren: () => import('./product/product.module').then(m => m.ProductModule) },
+  { path: 'homenew',canActivate: [AuthGuard], loadChildren: () => import('./homenew/homenew.module').then(m => m.HomenewModule) },
+  { path: 'product',canActivate: [AuthGuard], loadChildren: () => import('./product/product.module').then(m => m.ProductModule) },
   { path: 'cart', loadChildren: () => import('./cart/cart.module').then(m => m.CartModule) },
   { path: 'checkout', loadChildren: () => import('./checkout/checkout.module').then(m => m.CheckoutModule) },
-  { path: '' , redirectTo: 'homenew', pathMatch: 'full'},  
+  {path: 'login', component:LoginComponent },  
   {path: 'order', component: OrderComponent },
+  { path: '' , redirectTo: 'login', pathMatch: 'full'},  
   {path: 'chat', component: ChatComponent },
   {path: 'rapidapi', component : RapidapiComponent},
-  { path: '**', redirectTo: 'homenew'}
+  {path: 'todo', component : TodoComponent},
+  {path: 'productCatalog',component:AddProductCatalogComponent},
+  {path: 'productList',component:ApiintegrationComponent},
+  {path: 'productCart',component:ProductCartComponent},
+  {path: 'adduser', component: AdduserComponent, canDeactivate: [CanDeactivateGuard]},
+  {path: 'rxjs',component:RxjsComponent},
+  //{ path: '**', redirectTo: 'login'}
  ]
 
 @NgModule({

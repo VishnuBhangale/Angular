@@ -59,4 +59,9 @@
 <!-- </div>
 <br><br>
 </div> -->
+<input type="text" placeholder="Enter value" (blur)="sendData($event)">
+<app-lifecyclehook [data]="parentData" *ngIf="!isDestroy">
+    <p #projectedContent>{{externalContent}}</p>
+</app-lifecyclehook>
+<button class="btn btn-danger" (click)="OnDestroy()">OnDestroy</button>
 <router-outlet></router-outlet>

@@ -36,6 +36,7 @@ import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { SimpleComponent } from './simple/simple.component';
 import { RegisterComponent } from './register/register.component';
@@ -54,7 +55,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { LoginComponent } from './login/login.component';
 import { ApiintegrationComponent } from './apiintegration/apiintegration.component';
 import { TodoviewComponent } from './todoview/todoview.component';
-import { OrderModule } from './order/order.module';
+
 import { SharedModule } from './shared/shared.module';
 import { ChatComponent } from './chat/chat.component';
 import { Chat1Component } from './chat/chat1/chat1.component';
@@ -65,6 +66,13 @@ import { ProductCartComponent } from './ecommerse/product-cart/product-cart.comp
 import { AdduserComponent } from './adduser/adduser.component';
 import { LifecyclehookComponent } from './lifecyclehook/lifecyclehook.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from '../environments/environment';
+import { OrderModule } from './order/order.module';
+import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -112,7 +120,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     ProductCartComponent,
     AdduserComponent,
     LifecyclehookComponent,  
-    RxjsComponent
+    RxjsComponent, AuthComponent, LoadingSpinnerComponent, ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -129,11 +137,14 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     MatSelectModule,
     MatDividerModule,
     MatRadioModule,
+    MatProgressSpinnerModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     OrderModule,
     SharedModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
     
   ],
   providers: [

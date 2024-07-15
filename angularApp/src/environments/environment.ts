@@ -4,7 +4,16 @@
 
 export const environment = {
   production: false,
-  apiUrl:'http://localhost:3000'
+  apiUrl:'http://localhost:3000',
+ 
+  firebase: {
+    apiKey: "AIzaSyCzhfj19Jh9eZhEclKhvcShf2jT7x-gd_k",
+    authDomain: "medihealth-10d4c.firebaseapp.com",
+    projectId: "medihealth-10d4c",
+    storageBucket: "medihealth-10d4c.appspot.com",
+    messagingSenderId: "266008863690",
+    appId: "1:266008863690:web:38f23f0ffb74015c66e533"
+  }
 };
 
 /*

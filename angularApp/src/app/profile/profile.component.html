@@ -1,0 +1,32 @@
+<div class="profile-container" *ngIf="user; else notLoggedIn">
+
+    <h2>Welcome, {{ user.displayName || user.email }}</h2>
+
+    <div class="profile-info">
+
+      <p><strong>Email:</strong> {{ user.email }}</p>
+
+      <p *ngIf="user.displayName"><strong>Name:</strong> {{ user.displayName }}</p>
+
+      <p *ngIf="user.photoURL">
+
+        <strong>Photo:</strong><br>
+
+        <img [src]="user.photoURL" alt="User Photo" class="profile-photo">
+
+      </p>
+
+    </div>
+
+    <button (click)="logout()">Logout</button>
+
+  </div>
+
+  
+
+  <ng-template #notLoggedIn>
+
+    <p>You are not logged in. Please <a routerLink="/login">login</a>.</p>
+
+  </ng-template>
+
